@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="script.js"></script>
+    <title>Lab 3 Part 1</title>
 </head>
 <body>
-    
+    <h1>Lab 3 Part 1</h1>
+    <form onsubmit="submitLoginForm(event)">
+        <input type="text" name="username"><br>
+        <input type="email" name="email"><br>
+        <input type="password" name="password"><br>
+        <input type="submit">
+    </form>
 </body>
 </html>
+
+
+
+<!--a. Create a function called validateForm that takes no parameters. 
+b. Inside the validateForm function, get the value of the username, email, and password input fields.
+c. Use if-else statements to validate each input field. The validation rules are as follows:
+d. The username field must not be empty, and must contain only letters and numbers.
+e. The email field mustnot be empty, and must contain '@' character. (Bonus points for REGEX validation)
+f. The password field must not be empty, and must be at least 8 characters long.
+g. If all input fields are valid, console.log a message to the user saying "Form submitted successfully". If any input field is invalid, console.log a message to the user saying "Form submission failed"-->
