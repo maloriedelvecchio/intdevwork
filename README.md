@@ -1,2 +1,0 @@
-# intdevwork
- For all coursework
