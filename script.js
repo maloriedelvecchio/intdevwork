@@ -1,3 +1,5 @@
+// PART 1
+
 function validateForm(){
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
@@ -30,3 +32,51 @@ function validateForm(){
     console.log("Form submitted successfully");
     window.alert("BRAVO!!! You can fill out a form properly");
 }
+
+// PART 2
+
+const products = [
+    'Tees',
+    'Blouses',
+    'Sweaters', 
+    'Hoodies',
+    'Dresses',
+    'Pants',
+    'Jeans',
+    'Outerwear',
+    'Accessories',
+    'Footwear'
+];
+
+// display
+
+const productList = document.getElementById('productList');
+
+function displayProducts(productList, products) {
+    productList.innerHTML = '';
+    
+    for (let i = 0; i < products.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = products[i];
+        productList.appendChild(li); 
+    }
+}
+
+displayProducts(productList, products);
+
+// search
+
+const searchInput = document.getElementById('searchInput');
+
+function searchProducts(query, products) {
+    return products.filter(product =>
+        product.toLowerCase().includes(query.toLowerCase())
+    );
+}
+
+searchInput.addEventListener('input', function () {
+    const query = searchInput.value;
+    const filteredProducts = searchProducts(query, products);
+    displayProducts(productList, filteredProducts);
+});
+
