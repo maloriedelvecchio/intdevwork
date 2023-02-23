@@ -1,21 +1,32 @@
 function validateForm(){
-    username = "jane.doe";
-    email = "jane.doe@gmail.com";
-    password = "iAmJaNeDoE";
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (username === "" || email === "" || password === "") {
+        console.log("Form submission failed");
+        window.alert("INVALID: You must enter a username, an email address, AND a password, you silly goose!");
+        return;
+    }
+
+    if (!/^[0-9a-zA-Z]+$/.test(username)) {
+        console.log("Form submission failed");
+        window.alert("INVALID: Usernames can only have letters and numbers, you silly goose!");
+        return;
+    }
+
+    if (!email.includes("@")) {
+        console.log("Form submission failed");
+        window.alert("INVALID: Emails must include @ symbol, you silly goose!");
+        return;
+    }
+
+    if (password.length < 8){
+        console.log("Form submission failed");
+        window.alert("INVALID: Passwords must be 8 characters or more, you silly goose!");
+        return;
+    }
+
+    console.log("Form submitted successfully");
+    window.alert("BRAVO!!! You can fill out a form properly");
 }
-
-function submitLoginForm(event){
-    event.preventDefault();
-    console.log(event.target['username'].value);
-    console.log(event.target['email'].value)
-    console.log(event.target['password'].value);
-}
-
-
-/* a. Create a function called validateForm that takes no parameters. 
-b. Inside the validateForm function, get the value of the username, email, and password input fields.
-c. Use if-else statements to validate each input field. The validation rules are as follows:
-d. The username field must not be empty, and must contain only letters and numbers.
-e. The email field mustnot be empty, and must contain '@' character. (Bonus points for REGEX validation)
-f. The password field must not be empty, and must be at least 8 characters long.
-g. If all input fields are valid, console.log a message to the user saying "Form submitted successfully". If any input field is invalid, console.log a message to the user saying "Form submission failed"*/
